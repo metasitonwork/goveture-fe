@@ -9,10 +9,13 @@ axios.create({
   withCredentials: true
 });
 const testx = async () => {
+  // fetch("http://localhost:4000");
   let res_show = await axios({
     method: "GET",
     url: "https://goventure-be-test.vercel.app",
-    headers: { Accept: "application/json", "Content-Type": "application/json" }
+    credentials: "include",
+    headers: { Accept: "application/json", "Content-Type": "application/json" },
+    withCredentials: true
   }).then(success => {
     return success;
   });
@@ -47,8 +50,10 @@ const Login = () => {
       url: "https://goventure-be-test.vercel.app/login",
       data: { username: userName, password: password },
       headers: {
+        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json"
       },
+      credentials: "same-origin",
       withCredentials: true
     })
       .then(success => {
@@ -63,6 +68,8 @@ const Login = () => {
         });
         return;
       });
+
+    return;
 
     console.log(resLogin, "resLogin");
     if (resLogin)
@@ -151,7 +158,9 @@ const Login = () => {
               <button onClick={clearForm} type="reset" className="btn btn-secondary" style={{ width: "100px" }}>
                 Cancel
               </button>
-              <button onClick={() => testx()}>test</button>
+              <button type="button" onClick={() => testx()}>
+                test
+              </button>
             </div>
           </div>
         </form>
