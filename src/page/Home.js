@@ -8,11 +8,13 @@ import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import "./home.css";
+import ModalContent from "../components/Modal";
 
 const MySwal = withReactContent(Swal);
 let searchTime = null;
 function Home() {
   const history = useHistory();
+  const [modal, setModal] = useState(false);
   const [storeUser, setStoreUser] = useState([]);
   const [statusUpdate, setStatusUpdate] = useState(false);
   const [statusLoad, setStatusLoad] = useState(true);
@@ -122,6 +124,7 @@ function Home() {
   const updateUser = value => {
     setStatusUpdate(true);
     setForm(value);
+    setModal(true);
   };
   const deleteUserFn = async value => {
     MySwal.fire({
@@ -185,6 +188,14 @@ function Home() {
   );
   return (
     <>
+      <ModalContent
+        form={form}
+        status={modal}
+        setModal={setModal}
+        setStatusLoad={setStatusLoad}
+        statusUpdate={statusUpdate}
+        setForm={setForm}
+      />
       <div className="container mt-4">
         <div className="table">
           <div className="d-flex   ">
