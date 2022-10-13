@@ -12,6 +12,7 @@ const id = new URLSearchParams(window.location.search).get("id");
 const code = new URLSearchParams(window.location.search).get("code");
 const ForgetPassword = () => {
   const resProtect = useCallback(async () => {
+    console.log("resProtect");
     await axios({
       method: "post",
       url: "https://goventure-be-test.vercel.app/protectForgot",
