@@ -11,7 +11,6 @@ import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 const ModalContent = props => {
   const history = useHistory();
-  const [show, setShow] = useState(false);
   let {
     value: valueUsername,
     status: statusUsername,

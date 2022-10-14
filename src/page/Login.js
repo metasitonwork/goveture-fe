@@ -13,7 +13,6 @@ const Login = () => {
   const history = useHistory();
   const [userName, setUserName] = useState("");
   const [password, setPassWord] = useState("");
-  const [token, setToken] = useState("");
   const login = async event => {
     event.preventDefault();
     console.log("login");
@@ -56,9 +55,6 @@ const Login = () => {
         });
         return;
       });
-
-    // return;
-
     console.log(resLogin, "resLogin");
     if (resLogin)
       if (resLogin.status === 200) {
@@ -66,7 +62,6 @@ const Login = () => {
         history.push({
           pathname: "/home"
         });
-        //   protect(resLogin.data.token);
       }
   };
   const clearForm = () => {
@@ -74,19 +69,6 @@ const Login = () => {
     setPassWord("");
     document.getElementById("username").classList.remove("is-invalid");
     document.getElementById("password").classList.remove("is-invalid");
-  };
-  const protect = async value => {
-    console.log(value);
-    let resProtect = await axios({
-      method: "post",
-      url: "https://goventure-be-test.vercel.app/protected",
-      data: { token: value },
-      withCredentials: true
-      //   headers: { Accept: "application/json", "Content-Type": "application/json" }
-    }).then(success => {
-      return success;
-    });
-    console.log(resProtect, "resProtect");
   };
   return (
     <>
