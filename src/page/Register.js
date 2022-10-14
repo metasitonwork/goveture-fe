@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
 const MySwal = withReactContent(Swal);
-const Reigster = () => {
+const Register = () => {
   const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -101,7 +101,7 @@ const Reigster = () => {
         showConfirmButton: false,
         timer: 1500
       }).then(() => {
-        history.push("/login");
+        history.push("/");
       });
       return success;
     });
@@ -220,7 +220,7 @@ const Reigster = () => {
                   <button onClick={() => registerSave()} className="btn btn-primary me-2" style={{ width: "100px" }}>
                     Save
                   </button>
-                  <button onClick={() => history.push("/login")} className="btn btn-secondary" style={{ width: "100px" }}>
+                  <button onClick={() => history.push("/")} className="btn btn-secondary" style={{ width: "100px" }}>
                     Cancel
                   </button>
                 </div>
@@ -233,4 +233,4 @@ const Reigster = () => {
   );
 };
 
-export default Reigster;
+export default Register;

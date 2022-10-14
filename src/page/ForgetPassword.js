@@ -84,7 +84,7 @@ const ForgetPassword = () => {
               Forgot
             </button>
             <button
-              onClick={() => history.push("/login")}
+              onClick={() => history.push("/")}
               className="btn btn-secondary ms-2"
               style={{ width: "150px", height: "38px" }}
             >

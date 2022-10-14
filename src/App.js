@@ -2,7 +2,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import Layout from "./layout/layout";
 import Home from "./page/Home";
 import Login from "./page/Login";
-import Reigster from "./page/Register";
+import Register from "./page/Register";
 import ForgetPassword from "./page/ForgetPassword";
 import ResetPassword from "./page/Resetpassword";
 function App() {
@@ -10,11 +10,11 @@ function App() {
     <>
       <Layout>
         <Switch>
-          <Route path="/login" exact>
+          <Route path="/" exact>
             <Login />
           </Route>
           <Route path="/register">
-            <Reigster />
+            <Register />
           </Route>
           <Route path="/forget_password">
             <ForgetPassword />
@@ -22,7 +22,7 @@ function App() {
           <Route path="/reset_password">
             <ResetPassword />
           </Route>
-          <Route path="/">
+          <Route path="/home">
             <Home />
           </Route>
         </Switch>

@@ -45,7 +45,7 @@ function Home() {
           }).then(success => {
             try {
               if (success.data.text === "Error") {
-                history.push("/login");
+                history.push("/");
               }
             } catch (error) {}
 
@@ -69,12 +69,15 @@ function Home() {
           }).then(success => {
             try {
               if (success.data.text === "Error") {
-                history.push("/login");
+                history.push("/");
               }
             } catch (error) {}
             return success;
           });
           if (user.status === 200) {
+            if (user.data.status === 400) {
+              history.push("/");
+            }
             setStoreUser(user.data.data);
             setStatusLoad(false);
           }
@@ -106,7 +109,7 @@ function Home() {
         }).then(success => {
           try {
             if (success.data.text === "Error") {
-              history.push("/login");
+              history.push("/");
             }
           } catch (error) {}
           return success;
@@ -114,7 +117,7 @@ function Home() {
         console.log(exitSystem, "exitSystem");
         if (exitSystem.status === 200) {
           localStorage.clear();
-          history.push("/login");
+          history.push("/");
         }
       }
     });
@@ -151,7 +154,7 @@ function Home() {
         }).then(success => {
           try {
             if (success.data.text === "Error") {
-              history.push("/login");
+              history.push("/");
             }
           } catch (error) {}
           return success;

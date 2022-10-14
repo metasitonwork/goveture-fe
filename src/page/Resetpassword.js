@@ -81,7 +81,7 @@ const ResetPassword = () => {
         title: resReset.data.message,
         showConfirmButton: true
       }).then(() => {
-        history.push("/login");
+        history.push("/");
       });
     }
     console.log(resReset, "resReset");
@@ -146,7 +146,7 @@ const ResetPassword = () => {
           <div className="card-body " style={{ width: "500px" }}>
             <div className="w-100 text-center">
               <h2>Page นี้ไม่พร้อมใช้งาน</h2>
-              <button onClick={() => history.push("/login")} className="btn btn-primary" style={{ width: "150px" }}>
+              <button onClick={() => history.push("/")} className="btn btn-primary" style={{ width: "150px" }}>
                 {" "}
                 Login{" "}
               </button>

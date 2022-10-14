@@ -111,7 +111,7 @@ const ModalContent = props => {
       }).then(success => {
         try {
           if (success.data.text === "Error") {
-            history.push("/login");
+            history.push("/");
           }
         } catch (error) {}
         return success;
@@ -152,7 +152,7 @@ const ModalContent = props => {
       }).then(success => {
         try {
           if (success.data.text === "Error") {
-            history.push("/login");
+            history.push("/");
           }
         } catch (error) {}
         return success;
