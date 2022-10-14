@@ -165,8 +165,6 @@ const ModalContent = props => {
         changeSurname("", true);
         changeConfirm("", true);
         changeEmail("", true);
-
-        console.log(add_res.data, "success");
         MySwal.fire({
           icon: "success",
           title: add_res.data.message,
@@ -180,21 +178,12 @@ const ModalContent = props => {
     //
   };
   const clear = () => {
-    props.setForm({
-      username: "",
-      password: "",
-      confirm: "",
-      name: "",
-      surname: "",
-      email: "",
-      id_user: null
-    });
-    setUsername("");
-    setPassword("");
-    setConfirm("");
-    setName("");
-    setSurname("");
-    setEmail("");
+    changeUsername("", true);
+    changePassword("", true);
+    changeConfirm("", true);
+    changeName("", true);
+    changeSurname("", true);
+    changeEmail("", true);
     props.setModal(false);
   };
 

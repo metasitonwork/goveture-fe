@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useState } from "react";
 import axios from "axios";
 let checkString = null;
 const Input = (fn, username = "") => {
-  const history = useHistory();
   const [value, setValue] = useState("");
   const [status, setStatus] = useState(false);
 
@@ -52,6 +50,7 @@ const Input = (fn, username = "") => {
         setValue("");
         setStatus(false);
       } else {
+        console.log("FALSE");
         setStatus(false);
         setValue(event.target.value);
       }
